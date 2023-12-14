@@ -1,0 +1,22 @@
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #5553ff;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.login {
+    border-radius: 12px;
+    background-color: #FAFAFA;
+    padding: 20px;
+}
+
+.mat-mdc-form-field {
+    flex-direction: unset;
+    width: 360px;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+    width: unset;
+}

@@ -1,0 +1,6 @@
+<app-header [user]="user"></app-header>
+<div fxLayout="column" class="container">
+    <div *ngFor="let ticket of userTickets" fxLayout="column">
+        <app-ticket-item [ticket]="ticket"></app-ticket-item>
+    </div>
+</div>

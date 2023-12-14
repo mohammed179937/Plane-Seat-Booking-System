@@ -1,0 +1,25 @@
+<app-header [user]="undefined"></app-header>
+<div fxLayout="column" class="container">
+    <div class="login" fxLayout="column" fxLayoutGap="14px">
+        <span>Register to Our Airlines</span>
+        <mat-form-field>
+            <input matInput type="text" placeholder="First Name" [formControl]="registerForm.controls.firstName">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Last Name" [formControl]="registerForm.controls.lastName">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Birthdate"
+                [formControl]="registerForm.controls.birthdate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Email" [formControl]="registerForm.controls.email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" placeholder="Password" [formControl]="registerForm.controls.password">
+        </mat-form-field>
+        <button [disabled]="!registerForm.valid" (click)="register()" class="btn-primary btn">Register</button>
+    </div>
+</div>

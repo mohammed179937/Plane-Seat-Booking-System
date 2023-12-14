@@ -1,0 +1,21 @@
+<div fxLayout="row" class="ticket-container" fxLayoutGap="10px">
+    <img src="assets/air-ticket.png" alt="">
+    <div fxLayout="column" fxLayoutGap="10px">
+        <div fxLayout="row" fxLayoutGap="4px">
+            <span>User ID: </span>
+            <span>{{ticket?.user_id}}</span>
+        </div>
+        <div fxLayout="row" fxLayoutGap="4px">
+            <span>Ticket ID: </span>
+            <span>{{ticket?.trip_id}}</span>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="4px">
+        <span>Seat Number: </span>
+        <span>{{ticket?.seat_num}}</span>
+    </div>
+    <div fxLayout="row" fxLayoutGap="4px">
+        <span>Price: </span>
+        <span>{{ticket?.price}}</span>
+    </div>
+</div>

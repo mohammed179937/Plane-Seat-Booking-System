@@ -1,0 +1,14 @@
+<app-header [user]="undefined"></app-header>
+<div fxLayout="column" class="container">
+    <div class="login" fxLayout="column" fxLayoutGap="14px">
+        <span>Welcome to Our Airlines</span>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Email" [formControl]="loginForm.controls.email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" placeholder="Password" [formControl]="loginForm.controls.password">
+        </mat-form-field>
+        <button (click)="login()" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+        <button (click)="register()" class="btn btn-primary">Register</button>
+    </div>
+</div>

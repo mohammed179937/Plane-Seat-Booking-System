@@ -1,0 +1,38 @@
+<div fxLayout="row" class="ticket-container" fxLayoutGap="10px">
+    <img src="assets/air-ticket.png" alt="">
+    <div fxLayout="column" fxLayoutGap="10px">
+        <div fxLayout="row" fxLayoutGap="4px">
+            <span>From: </span>
+            <span>{{flight?.from}}</span>
+        </div>
+        <div fxLayout="row" fxLayoutGap="4px">
+            <span>To: </span>
+            <span>{{flight?.to}}</span>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="4px">
+        <span>Duration: </span>
+        <span>{{flight?.duration}}</span>
+    </div>
+    <div fxLayout="row" fxLayoutGap="4px">
+        <span>Available Seats: </span>
+        <select id="dropdown" [(ngModel)]="seatNum">
+            <option *ngFor="let option of flight!.av_seats" [value]="option">{{ option }}</option>
+        </select>
+    </div>
+    <div fxLayout="column" fxLayoutGap="10px">
+        <div fxLayout="row" fxLayoutGap="4px">
+            <span>Departure Date: </span>
+            <span>{{flight?.dep_date}}</span>
+        </div>
+        <div fxLayout="row" fxLayoutGap="4px">
+            <span>Departure Time: </span>
+            <span>{{flight?.dep_time}}</span>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="4px">
+        <span>Price: </span>
+        <span>{{flight?.price}} EGP</span>
+    </div>
+    <button class="btn btn-primary search-button" (click)="book()" [disabled]="seatNum==0">Book</button>
+</div>

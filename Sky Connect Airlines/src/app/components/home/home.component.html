@@ -1,0 +1,29 @@
+<app-header [user]="user"></app-header>
+<div fxLayout="column" fxLayoutGap="24px">
+    <div fxLayout="column" class="container">
+        <div fxLayout="row" fxLayoutGap="2px">
+            <mat-form-field>
+                <input matInput type="text" placeholder="From Where?" [formControl]="searchForm.controls.fromWhere">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="text" placeholder="Where to?" [formControl]="searchForm.controls.whereTo">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date"
+                    [formControl]="searchForm.controls.travelDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <button class="btn btn-primary search-button" [disabled]="!searchForm.valid"
+                (click)="search()">Search</button>
+        </div>
+        <span *ngIf="searchClicked" (click)="resetFilters()" class="reset-btn">Reset Filters</span>
+    </div>
+
+    <div fxLayout="column" class="container">
+        <div *ngFor="let flight of filteredFlights" fxLayout="column">
+            <app-flight-item [flight]="flight" [user]="user"></app-flight-item>
+        </div>
+    </div>
+
+</div>

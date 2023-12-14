@@ -1,0 +1,22 @@
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #605DEC;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.mat-mdc-form-field {
+    flex-direction: unset;
+    width: 250px;
+}
+
+.reset-btn {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.search-button {
+    height: 56px;
+}
